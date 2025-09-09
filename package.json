@@ -1,0 +1,54 @@
+{
+  "name": "MyApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "gClean": "cd android && ./gradlew clean && cd ..",
+    "lint": "eslint .",
+    "start": "react-native start",
+    "test": "jest",
+    "create-debug": "npm run gradle-clean && npm run bundle-android && npm run debug && npm run open-debug-folder",
+    "gradle-clean": "cd android && ./gradlew clean && cd ..",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "debug": "cd android && ./gradlew assembleDebug && cd ..",
+    "open-debug-folder": "open android/app/build/outputs/apk/debug",
+    "uninstall-app": "adb uninstall com.clientracker.app",
+    "pod-install": "cd ios && pod install && cd ..",
+    "ise-3": "react-native run-ios --simulator \"iPhone SE (3rd generation)\"",
+    "ios-8": "react-native run-ios --simulator \"iPhone 8\"",
+    "iXs": "react-native run-ios --simulator \"iPhone Xs\"",
+    "ios-13-pm": "react-native run-ios --simulator \"iPhone 13 Pro Max\"",
+    "ios-15-pm": "react-native run-ios --simulator \"iPhone 15 Pro Max\"",
+    "ios-16-p": "react-native run-ios --simulator \"iPhone 16 Pro\"",
+    "ios-16-pm": "react-native run-ios --simulator \"iPhone 16 Pro Max\""
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-native": "0.79.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "18.0.0",
+    "@react-native-community/cli-platform-android": "18.0.0",
+    "@react-native-community/cli-platform-ios": "18.0.0",
+    "@react-native/babel-preset": "0.79.6",
+    "@react-native/eslint-config": "0.79.6",
+    "@react-native/metro-config": "0.79.6",
+    "@react-native/typescript-config": "0.79.6",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.0.0",
+    "@types/react-test-renderer": "^19.0.0",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-test-renderer": "19.0.0",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
